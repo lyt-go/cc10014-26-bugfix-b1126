@@ -10,8 +10,8 @@ export function useCrossModule(moduleKey: string) {
   const depGraph = ref<{ nodes: any[]; edges: any[] }>({ nodes: [], edges: [] })
 
   function statusClass(s: string): string {
-    const done = ['已完成','已通过','已签署','已备案','已核实','已入库','已签认','已汇总']
-    const alert = ['已驳回','异常报警','已过期','需整改','已延期','待补充']
+    const done = ['已完成','已通过','已签署','已备案','已核实','已入库','已签认','已汇总','已交接']
+    const alert = ['已驳回','异常报警','已过期','需整改','待复检','待补测','已延期','待补充']
     if (done.includes(s)) return 'status-done'
     if (alert.includes(s)) return 'status-alert'
     return 'status-pending'
